@@ -68,17 +68,17 @@ export class AuthService {
     private loadSession() {
         const accessToken = sessionStorage.getItem('access_token');
         const idToken = sessionStorage.getItem('id_token');
-        const expiresAt = sessionStorage.getItem('expires_at');
+        const expiresAtJson = sessionStorage.getItem('expires_at');
 
-        if (!accessToken || !idToken || !expiresAt) {
+        if (!accessToken || !idToken || !expiresAtJson) {
             this.clearSession();
             return;
         }
 
-        const expiresAtDate = JSON.parse(expiresAt);
+        const expiresAt = JSON.parse(expiresAtJson);
 
         this.isAuthenticatedInternal = true;
-        this.setExpirationTimer(this.calculateExpiresIn(expiresAtDate));
+        this.setExpirationTimer(this.calculateExpiresIn(expiresAt));
     }
 
     private clearSession() {
@@ -94,8 +94,8 @@ export class AuthService {
         return expiresInSeconds * 1000 + new Date().getTime();
     }
 
-    private calculateExpiresIn(expiresAt: Date) {
-        return expiresAt.getTime() - new Date().getTime();
+    private calculateExpiresIn(expiresAt: number) {
+        return expiresAt - new Date().getTime();
     }
 
     private setExpirationTimer(expiresInSeconds: number | null) {
