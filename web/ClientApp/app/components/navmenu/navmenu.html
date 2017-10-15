@@ -14,6 +14,18 @@
             <div class="clearfix"></div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li hide.bind="authService.isAuthenticated">
+                        <a click.delegate="authService.login()" href="#">
+                            Login
+                        </a>
+                    </li>
+                    <li show.bind="authService.isAuthenticated">
+                        <a click.delegate="authService.logout()" href="#">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
                     <li repeat.for = "row of router.navigation" class="${ row.isActive ? 'link-active' : '' }" >
                         <a href.bind = "row.href">
                             <span class="glyphicon glyphicon-${ row.settings.icon }"></span> ${ row.title }
