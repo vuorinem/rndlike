@@ -7,12 +7,17 @@ export class App {
     configureRouter(config: RouterConfiguration, router: Router) {
         config.title = 'Aurelia';
         config.map([{
-            route: [ '', 'home' ],
+            route: ['', 'home'],
             name: 'home',
             settings: { icon: 'home' },
             moduleId: PLATFORM.moduleName('../home/home'),
             nav: true,
             title: 'Home'
+        }, {
+            route: ['authorize'],
+            name: 'authorize',
+            moduleId: PLATFORM.moduleName('../auth/authorize'),
+            nav: false,
         }]);
 
         this.router = router;
