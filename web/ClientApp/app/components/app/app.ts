@@ -13,20 +13,6 @@ export class App {
             moduleId: PLATFORM.moduleName('../home/home'),
             nav: true,
             title: 'Home'
-        }, {
-            route: 'counter',
-            name: 'counter',
-            settings: { icon: 'education' },
-            moduleId: PLATFORM.moduleName('../counter/counter'),
-            nav: true,
-            title: 'Counter'
-        }, {
-            route: 'fetch-data',
-            name: 'fetchdata',
-            settings: { icon: 'th-list' },
-            moduleId: PLATFORM.moduleName('../fetchdata/fetchdata'),
-            nav: true,
-            title: 'Fetch data'
         }]);
 
         this.router = router;
