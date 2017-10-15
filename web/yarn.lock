@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@types/auth0-js@^8.10.0":
+  version "8.10.0"
+  resolved "https://registry.yarnpkg.com/@types/auth0-js/-/auth0-js-8.10.0.tgz#f093b3936b6b22ed786e62d45c1943c8e250ddc1"
+
 "@types/webpack-env@^1.13.2":
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.13.2.tgz#c290b99dbef74df21b06671aea36e355bf3b27e1"

@@ -15,6 +15,7 @@
     "jquery": "^3.2.1"
   },
   "devDependencies": {
+    "@types/auth0-js": "^8.10.0",
     "@types/webpack-env": "^1.13.2",
     "aspnet-webpack": "^2.0.1",
     "aurelia-webpack-plugin": "^2.0.0-rc.5",
