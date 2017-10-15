@@ -6,6 +6,7 @@ export class App implements ConfiguresRouter {
 
     configureRouter(config: RouterConfiguration, router: Router) {
         config.title = 'Aurelia';
+        config.options.pushState = true;
         config.map([{
             route: ['', 'home'],
             name: 'home',
